@@ -1,0 +1,99 @@
+@mixin media-for-device($device){
+    @if $device =="tablet"{
+        @media screen and (min-width: 577px){
+            @content;
+        }
+    }
+    @else if $device =="desktop" {
+        @media screen and (min-width: 992px){
+            @content;
+        }
+    }
+    @else{
+        @error "Invalid device type '#{device}'. Please use 'tablet' or 'mobile'."
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    margin: 0 10px;
+    @include media-for-device("tablet"){
+        width: 70%;
+        margin: 0 auto;
+    }
+    @include media-for-device("desktop"){
+        width: 40%;
+        margin: 0 auto;
+    }
+    h1{
+        font-size:1.5rem;
+        text-align: center;
+        color: rgb(37, 37, 37);
+        @include media-for-device("tablet"){
+            font-size: 2rem;
+        }
+        @include media-for-device("desktop"){
+            font-size: 2.4rem;
+        }
+    }
+    h1:nth-of-type(2){
+        margin-top: 40px;
+    }
+}
+
+form{
+    width: 100%;
+    margin-inline: 20px;
+    display: flex;
+    input{
+        width: 60%;
+        margin-block:20px;
+        padding: 6px 8px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+        transition: .3s;
+        @include media-for-device("tablet"){
+            width: 65%;
+            margin-block:2rem;
+            padding: 8px 10px;
+            font-size: 1.2rem;
+        }
+    }
+    input:focus{
+        outline: none;
+    }
+    button{
+        margin-block:20px;
+        padding: 6px 8px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 0px 5px 5px 0px; 
+        background-color: rgb(9, 200, 253);
+        font-weight: bold;
+        color: white;
+        transition: .3s;
+        @include media-for-device("tablet"){
+            padding: 8px 10px;
+            margin-block:2rem;
+            font-size: 1.2rem;
+        }
+    }
+    button:hover{
+        background-color: rgb(2, 173, 220); 
+    }
+}

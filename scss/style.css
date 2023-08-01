@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  margin: 0 10px;
+}
+@media screen and (min-width: 577px) {
+  .container {
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
+.container h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(37, 37, 37);
+}
+@media screen and (min-width: 577px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container h1 {
+    font-size: 2.4rem;
+  }
+}
+.container h1:nth-of-type(2) {
+  margin-top: 40px;
+}
+
+form {
+  width: 100%;
+  margin-inline: 20px;
+  display: flex;
+}
+form input {
+  width: 60%;
+  margin-block: 20px;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  transition: 0.3s;
+}
+@media screen and (min-width: 577px) {
+  form input {
+    width: 65%;
+    margin-block: 2rem;
+    padding: 8px 10px;
+    font-size: 1.2rem;
+  }
+}
+form input:focus {
+  outline: none;
+}
+form button {
+  margin-block: 20px;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0px 5px 5px 0px;
+  background-color: rgb(9, 200, 253);
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+@media screen and (min-width: 577px) {
+  form button {
+    padding: 8px 10px;
+    margin-block: 2rem;
+    font-size: 1.2rem;
+  }
+}
+form button:hover {
+  background-color: rgb(2, 173, 220);
+}/*# sourceMappingURL=style.css.map */

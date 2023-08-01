@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black listed Companies</title>
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./scss/style.css">
+
+    <!-- scripts -->
+    <script defer src="./js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- searching section for blacklisted companies -->
+        <h1>Search all the blacklisted companies</h1>
+        <form class="form-1" onsubmit=handleSubmit(event)>
+            <input id="company_searching_input" type="text" placeholder="Enter company name">
+            <button type="submit">Is Blacklisted ?</button>
+        </form>
+
+        <!-- adding section for blacklisted companies -->
+        <h1>Add a company to blacklist</h1>
+        <form class="form-2" onsubmit=handleAddCompany(event)>
+            <input id="company_adding_input" type="text" placeholder="Enter company name">
+            <button type="submit">Add to blacklist</button>
+        </form>
+    </div>
+</body>
+
+</html>
