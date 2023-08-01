@@ -77,7 +77,7 @@ async function addCompany (company:Company):Promise<void>{
 function isExist (name:string):boolean{
     const companiesStr = localStorage.getItem("black_listed_companies")
     const companies:Company[] = companiesStr? JSON.parse(companiesStr) : []
-    const exist = companies.length>0 && companies.find(el=>el.company===name)
+    const exist = companies.length>0 && companies.find(el=>el.company.toLowerCase()===name.toLowerCase())
     return !!exist
 }
 loadBlackListedCompanies()
