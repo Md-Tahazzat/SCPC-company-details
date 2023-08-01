@@ -49,9 +49,9 @@ function handleAddCompany(e) {
     // adding to database by api call
     const companyDetails = {
         company: inputText,
-        key: keystr
+        key: keystr,
     };
-    formElement.company_adding_input.value = '';
+    formElement.company_adding_input.value = "";
     addCompany(companyDetails);
 }
 // api call function to add company name to blacklist.
@@ -61,9 +61,9 @@ function addCompany(company) {
         const res = yield fetch(url, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(company)
+            body: JSON.stringify(company),
         });
         const data = yield res.json();
         console.log(data);
@@ -79,7 +79,9 @@ function addCompany(company) {
 function isExist(name) {
     const companiesStr = localStorage.getItem("black_listed_companies");
     const companies = companiesStr ? JSON.parse(companiesStr) : [];
-    const exist = companies.length > 0 && companies.find(el => el.company === name);
+    const exist = companies.length > 0 &&
+        companies.find(({ company }) => company.replace(/\s/g, "").toLowerCase() ===
+            name.replace(/\s/g, "").toLowerCase());
     return !!exist;
 }
 loadBlackListedCompanies();
